@@ -1,5 +1,7 @@
 package Devtiro.Task.mapper.impl;
 
+import org.springframework.stereotype.Component;
+
 import Devtiro.Task.domain.CreateTaskRequest;
 import Devtiro.Task.domain.UpdateTaskRequest;
 import Devtiro.Task.domain.dto.CreateTaskRequestDto;
@@ -8,6 +10,7 @@ import Devtiro.Task.domain.dto.UpdateTaskRequestDto;
 import Devtiro.Task.domain.entity.Task;
 import Devtiro.Task.mapper.TaskMapper;
 
+@Component
 public class TaskMapperImpl implements TaskMapper {
     @Override
     public CreateTaskRequest fromDto(CreateTaskRequestDto dto) {
