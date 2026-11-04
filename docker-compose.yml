@@ -1,0 +1,17 @@
+# Name of Docker environment
+name: devtiro-build-task-app
+services:
+  ui:
+    image: ghcr.io/devtiro/devtiro-build-task-app:latest
+    ports:
+      # UI available on https://localhost:3000
+      - "3000:3000"
+    
+    # Tell the UI how to find the Spring Boot App
+    environment:
+      - BACKEND_HOST=host.docker.internal
+      - BACKEND_PORT=8080
+
+    # Linux compatibility
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
